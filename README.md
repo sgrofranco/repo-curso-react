@@ -1,6 +1,6 @@
 # Repositorio del curso de React
 
-Este repositorio se creó para el proyecto del curso de TalentoTech en React
+Este repositorio se creó para el proyecto del curso de TalentoTech con React
 
 ## Aclaraciones
 
