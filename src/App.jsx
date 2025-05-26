@@ -11,6 +11,7 @@ import Cart from './components/Cart';
 import Admin from './layout/Admin';
 import Login from './layout/Login';
 import ProtectedRoute from './layout/ProtectedRoute';
+import ProductoDetalle from './layout/ProductoDetalle';
 
 function App() {
 
@@ -77,6 +78,7 @@ function App() {
         <Route path='/tienda' element={<Tienda />} />
         <Route path='*' element={<h1>404 Not Found</h1>} />
         <Route path='/login' element={<Login />} />
+        <Route path='/producto/:id' element={<ProductoDetalle />} />
         <Route path='/admin' element={
           <ProtectedRoute>
             <Admin />
