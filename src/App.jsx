@@ -8,6 +8,9 @@ import Contacto from './layout/Contacto';
 import Nosotros from './layout/Nosotros';
 import Tienda from './layout/Tienda';
 import Cart from './components/Cart';
+import Admin from './layout/Admin';
+import Login from './layout/Login';
+import ProtectedRoute from './layout/ProtectedRoute';
 
 function App() {
 
@@ -73,6 +76,12 @@ function App() {
         <Route path='/nosotros' element={<Nosotros />} />
         <Route path='/tienda' element={<Tienda />} />
         <Route path='*' element={<h1>404 Not Found</h1>} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/admin' element={
+          <ProtectedRoute>
+            <Admin />
+          </ProtectedRoute>
+        } />
       </Routes>
       <Footer />
     </>
