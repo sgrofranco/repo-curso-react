@@ -1,7 +1,11 @@
 import React from 'react'
 import './Cart.css'
+import { useCart } from '../context/CartContext';
 
-const Cart = ({ cartItems, onRemove, isCartOpen, toggleCart }) => {
+const Cart = () => {
+  
+  const { isCartOpen, toggleCart, cartItems, onRemove } = useCart();
+
   if (!isCartOpen) return null;
   
   return (

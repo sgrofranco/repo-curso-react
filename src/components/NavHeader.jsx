@@ -3,7 +3,9 @@ import './NavHeader.css'
 import Header from './Header'
 import { Link } from 'react-router-dom'
 
-const NavHeader = ({ countItem, toggleCart }) => {
+const NavHeader = () => {
+
+  const { countItem, toggleCart } = useCart();
 
   return (
     <div className='header-nav'>

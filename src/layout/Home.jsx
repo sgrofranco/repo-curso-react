@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import Main from '../components/Main'
 import ProductList from '../components/ProductList'
 import Cart from '../components/Cart'
+import { useCart } from '../context/CartContext'
 
-const Home = ({ handleAddToCart }) => {
+const Home = () => {
+
+  const {handleAddToCart} = useCart();
 
   const [productos, setProductos] = useState([])
 
