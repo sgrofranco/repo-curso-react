@@ -15,7 +15,7 @@ import ProductoDetalle from './layout/ProductoDetalle';
 
 function App() {
 
-
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <>
@@ -31,7 +31,7 @@ function App() {
         <Route path='/producto/:id' element={<ProductoDetalle />} />
         <Route path='/admin' element={
           <ProtectedRoute>
-            <Admin />
+            <Admin isAuthenticated={isAuthenticated} />
           </ProtectedRoute>
         } />
       </Routes>

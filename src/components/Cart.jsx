@@ -4,7 +4,7 @@ import { useCart } from '../context/CartContext';
 
 const Cart = () => {
   
-  const { isCartOpen, toggleCart, cartItems, onRemove } = useCart();
+  const { isCartOpen, toggleCart, cart, handleRemoveFromCart } = useCart();
 
   if (!isCartOpen) return null;
   
@@ -14,14 +14,14 @@ const Cart = () => {
       <div className="cart-sidebar open">
         <button className="close-btn" onClick={toggleCart}>×</button>
         <h2>Carrito</h2>
-        {cartItems.length === 0 ? (
+        {cart.length === 0 ? (
           <p>El carrito está vacío</p>
         ) : (
           <ul>
-            {cartItems.map((item) => (
+            {cart.map((item) => (
               <li key={item.id}>
                 {item.name} (x{item.quantity}) - ${item.price * item.quantity}
-                <button onClick={() => onRemove(item.id)}>Eliminar</button>
+                <button onClick={() => handleRemoveFromCart(item.id)}>Eliminar</button>
               </li>
             ))}
           </ul>
