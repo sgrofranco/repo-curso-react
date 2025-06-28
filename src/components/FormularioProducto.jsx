@@ -5,7 +5,9 @@ const FormularioProducto = ({onAgregar}) => {
     const [producto, setProducto] = useState({
         nombre: '',
         precio: '',
-        descripcion: ''
+        descripcion: '',
+        stock: '',
+        image: ''
     });
 
     const [errors, setErrors] = useState({});
@@ -88,6 +90,16 @@ const FormularioProducto = ({onAgregar}) => {
                 id="stock"
                 name="stock"
                 value={producto.stock || ''}
+                onChange={handleChange}
+            />
+        </div>
+        <div>
+            <label htmlFor='image'>Imagen URL:</label>
+            <input
+                type="text"
+                id="image"
+                name="image"
+                value={producto.image}
                 onChange={handleChange}
             />
         </div>
