@@ -37,7 +37,7 @@
 
 .login-container input:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #ff5722;
 }
 
 .login-container .error {
@@ -48,7 +48,7 @@
 .login-container button {
   padding: 0.75rem;
   font-size: 1rem;
-  background-color: #007bff;
+  background-color: #ff5722;
   border: none;
   color: white;
   border-radius: 4px;
@@ -57,5 +57,5 @@
 }
 
 .login-container button:hover {
-  background-color: #0056b3;
+  background-color: #d94d26;
 }
