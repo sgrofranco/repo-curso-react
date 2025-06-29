@@ -39,7 +39,9 @@ const Login = () => {
       } else {
         if (foundUser.role === 'admin') {
           login();
-          navigate('/admin');
+          setTimeout(() => {
+            navigate('/admin');
+          }, 0);
         } else {
           navigate('/');
         }

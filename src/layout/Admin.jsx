@@ -26,7 +26,7 @@ const Admin = () => {
 
   const agregarProducto = async (producto) => {
     try {
-      const respuesta = await fetch('https://682502a60f0188d7e72bb76c.mockapi.io/productos-ecommerce/productos', {
+      const respuesta = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -42,34 +42,52 @@ const Admin = () => {
       console.error(error.message);
     }
   }
-  return (
-    <div>
-      <h1>Panel de Administración</h1>
 
-      {loading ? (
-        <p>Cargando productos...</p>
-      ) : (
-        <ul className='product-list'>
-          {productos.map((producto) => (
-            <div key={producto.id} className="product-card">
-              <img src={producto.image} style={{ width: '200px', height: '200px' }} />
-              <p>{producto.nombre}</p>
-              <p>${producto.precio}</p>
-              <p>Stock: {producto.stock}</p>
-              <p>{producto.descripcion}</p>
-              <div>
-                <button className="btn btn-danger">Eliminar</button>
-                <button className="btn btn-primary">Editar</button>
+  const eliminarProducto = async (id) => {
+    const confirmar = window.confirm('¿Estás seguro de eliminar este producto?');
+    if (confirmar) {
+      try { 
+        const respuesta = await fetch(`${apiUrl}/${id}`, {
+          method: 'DELETE'
+        })
+        if (!respuesta.ok) {
+          throw new Error('Error al eliminar el producto')
+        }
+          alert('Producto eliminado correctamente');
+        } catch (error) {
+          alert('Error al eliminar el producto:', error.message);
+        }
+      }
+  }
+
+    return (
+      <div>
+        <h1>Panel de Administración</h1>
+
+        {loading ? (
+          <p>Cargando productos...</p>
+        ) : (
+          <ul className='product-list'>
+            {productos.map((producto) => (
+              <div key={producto.id} className="product-card">
+                <img src={producto.image} style={{ width: '200px', height: '200px' }} />
+                <p>{producto.nombre}</p>
+                <p>${producto.precio}</p>
+                <p>Stock: {producto.stock}</p>
+                <p>{producto.descripcion}</p>
+                <div>
+                  <button className="btn btn-danger" onClick={() => eliminarProducto(producto.id)}>Eliminar</button>
+                  <button className="btn btn-primary">Editar</button>
+                </div>
               </div>
-            </div>
-          ))}
-        </ul>
-      )}
+            ))}
+          </ul>
+        )}
 
-      <button onClick={() => setOpen(!open)}>Añadir Producto</button>
-      {open && (<FormularioProducto onAgregar={agregarProducto} />)}
-    </div>
-  )
-}
+        <button onClick={() => setOpen(!open)}>Añadir Producto</button>
+        {open && (<FormularioProducto onAgregar={agregarProducto} />)}
+      </div>
+    )
+  }
 
-export default Admin
+  export default Admin
