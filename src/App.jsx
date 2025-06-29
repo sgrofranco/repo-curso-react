@@ -12,6 +12,8 @@ import Admin from './layout/Admin';
 import Login from './layout/Login';
 import ProtectedRoute from './layout/ProtectedRoute';
 import ProductoDetalle from './layout/ProductoDetalle';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
 

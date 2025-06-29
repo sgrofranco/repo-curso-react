@@ -1,0 +1,115 @@
+.home-intro,
+.home-info {
+    text-align: center;
+    padding: 2rem;
+}
+
+.home-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.home-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.home-info li {
+    margin: 0.5rem 0;
+}
+
+.info-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    gap: 10rem;
+    flex-wrap: wrap;
+    /* para mobile */
+    min-height: 800px;
+}
+
+.info-image img {
+    max-width: 500px;
+    width: 120%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.info-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.info-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    color: #ff5722;
+    font-weight: 700;
+
+}
+
+.info-text p {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.cta-section {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  background-image: url('https://images.pexels.com/photos/2148220/pexels-photo-2148220.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(55, 71, 79, 0.8); /* ← tu color con transparencia */
+  z-index: 1;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.cta-section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #ff5722;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff5728;
+}

@@ -3,27 +3,42 @@ import Main from '../components/Main'
 import ProductList from '../components/ProductList'
 import Cart from '../components/Cart'
 import { useCart } from '../context/CartContext'
+import './Home.css'
+import { Link } from 'react-router-dom'
+import FormularioDeContacto from '../components/FormularioDeContacto'
 
 const Home = () => {
 
-  const {handleAddToCart} = useCart();
+  const { handleAddToCart } = useCart();
 
-  const [productos, setProductos] = useState([])
-
-  useEffect(() => {
-    fetch('https://682502a60f0188d7e72bb76c.mockapi.io/productos-ecommerce/productos')
-      .then((response) => response.json())
-      .then((datos) => { setProductos(datos) })
-      .catch((error) => console.error('Error fetching data:', error));
-
-  }, []);
 
   return (
-    <>
+    <div className="home">
       <Main />
-      <ProductList products={productos}
-        addToCart={handleAddToCart} />
-    </>
+
+      <section className="info-section">
+        <div className="info-image">
+          <img src="https://png.pngtree.com/png-vector/20250512/ourmid/pngtree-modern-desktop-computer-png-image_16222921.png" alt="Computadora" />
+        </div>
+        <div className="info-text">
+          <h2>Tecnología en la que podés confiar</h2>
+          <p>Descubrí productos pensados para vos.</p>
+        </div>
+      </section>
+
+      <section className="cta-section">
+        <div className='cta-content'>
+          <h2>Encontrá lo que estás buscando</h2>
+          <p>Explorá nuestra tienda y descubrí productos que se adaptan a tu vida.</p>
+          <Link to="/tienda" className="cta-button">
+            Ir a la tienda
+          </Link>
+        </div>
+      </section>
+      <section>
+        <FormularioDeContacto />
+      </section>
+    </div>
   )
 }
 

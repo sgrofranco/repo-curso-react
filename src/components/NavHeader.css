@@ -27,7 +27,7 @@ nav {
 
 .nav-links li:hover,
 .nav-links li a:hover {
-  color: #007bff;
+  color: #ff5722;
 }
 
 .cart-button {
@@ -39,8 +39,14 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: blue; /* o lo que estés usando */
+  background-color: #ff5722; /* o lo que estés usando */
   z-index: 1000;
   padding: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-nav h1 {
+  font-size: 4rem;        /* tamaño del texto */
+  padding: 2rem 0;        /* más espacio vertical */
+  line-height: .4;       /* ajuste de altura de línea */
 }
