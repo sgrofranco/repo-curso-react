@@ -39,7 +39,7 @@ const Admin = () => {
               <p>{producto.descripcion}</p>
               <div>
                 <button className="btn btn-danger" onClick={() => eliminarProducto(producto.id)}>Eliminar</button>
-                <button className="btn btn-primary" onClick={() => {
+                <button className="btn btn-danger" onClick={() => {
                   setOpenEditor(true)
                   setSeleccionado(producto)
                 }}>Editar</button>
