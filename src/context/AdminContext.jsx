@@ -109,6 +109,7 @@ export const AdminProvider = ({ children }) => {
             actualizarProducto,
             eliminarProducto,
             openEditor,
+            setOpenEditor
         }}>
             {children}
         </AdminContext.Provider>

@@ -18,12 +18,13 @@ const Admin = () => {
     actualizarProducto,
     eliminarProducto,
     openEditor,
+    setOpenEditor
 
   } = React.useContext(AdminContext);
 
   return (
     <div>
-      <h1>Panel de Administración</h1>
+      <h1 style={{marginTop: "50px",fontSize:"50px"}}>Panel de Administración</h1>
 
       {loading ? (
         <p>Cargando productos...</p>
@@ -48,7 +49,7 @@ const Admin = () => {
         </ul>
       )}
 
-      <button onClick={() => setOpen(!open)}>Añadir Producto</button>
+      <button onClick={() => setOpen(!open)} style={{backgroundColor:"#ff5722",marginBottom:"30px",color:"white"}}>Añadir Producto</button>
       {open && (<FormularioProducto onAgregar={agregarProducto} />)}
       {openEditor && (
         <FormularioEdicion
