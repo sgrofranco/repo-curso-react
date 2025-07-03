@@ -17,14 +17,14 @@ Proyecto final del curso de React en **Talento Tech**. Esta aplicación simula u
 Datos de usuario para simular un login
 
 - **Usuario: admin@example.com**
-- **Contraseña: **admin123**
-- **role": admin**
+- **Contraseña: admin123**
+- **role: admin**
 
 --
 
 - **Usuario: client@example.com**
-- **Contraseña: **cliente123**
-- **role": cliente**
+- **Contraseña: cliente123**
+- **role: client**
 
 ## Funcionalidades principales
 
